@@ -6,10 +6,8 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-class Employee {
-    private @Id
-    @GeneratedValue
-    Long id;
+public class Employee {
+    private @Id @GeneratedValue Long id;
     private String firstName;
     private String lastName;
     private String role;
@@ -54,9 +52,8 @@ class Employee {
         if (this == e)
             return true;
 
-        if (!(e instanceof Employee))
+        if (!(e instanceof Employee employee))
             return false;
-        Employee employee = (Employee) e;
         return Objects.equals(this.id, employee.id)
                 && Objects.equals(this.firstName, employee.firstName)
                 && Objects.equals(this.lastName, employee.lastName)
